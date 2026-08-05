@@ -6,8 +6,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { personJsonLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: `Meet the certified trainer behind ${APP_NAME} — background, certifications, and coaching experience.`,
+  title: "Σχετικά",
+  description: `Γνώρισε τον πιστοποιημένο προπονητή πίσω από το ${APP_NAME} — υπόβαθρο, πιστοποιήσεις και εμπειρία coaching.`,
   alternates: { canonical: "/about" },
 };
 
@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
           <Image
             src={trainer.photo}
-            alt={`Portrait of ${trainer.name}`}
+            alt={`Πορτρέτο του ${trainer.name}`}
             fill
             sizes="192px"
             className="object-cover"
@@ -50,7 +50,7 @@ export default function AboutPage() {
       </div>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold text-white">Experience</h2>
+        <h2 className="text-2xl font-bold text-white">Εμπειρία</h2>
         <ol className="mt-6 space-y-6 border-l border-white/10 pl-6">
           {trainer.experience.map((item) => (
             <li key={`${item.role}-${item.organization}`}>
@@ -65,7 +65,7 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold text-white">Certifications</h2>
+        <h2 className="text-2xl font-bold text-white">Πιστοποιήσεις</h2>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           {trainer.certifications.map((cert) => (
             <li

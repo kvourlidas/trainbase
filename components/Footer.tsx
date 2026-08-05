@@ -20,22 +20,22 @@ export function Footer() {
             </div>
           </div>
 
-          <nav aria-label="Footer" className="text-sm text-neutral-400">
-            <p className="font-semibold text-neutral-200">Site</p>
+          <nav aria-label="Υποσέλιδο" className="text-sm text-neutral-400">
+            <p className="font-semibold text-neutral-200">Ιστότοπος</p>
             <ul className="mt-3 space-y-2">
               <li>
                 <Link href="/programs" className="hover:text-white">
-                  Programs
+                  Προγράμματα
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-white">
-                  About
+                  Σχετικά
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white">
-                  Contact
+                  Επικοινωνία
                 </Link>
               </li>
             </ul>
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
 
         <p className="mt-10 border-t border-white/10 pt-6 text-xs text-neutral-500">
-          © {new Date().getFullYear()} {APP_NAME}. All rights reserved.
+          © {new Date().getFullYear()} {APP_NAME}. Με επιφύλαξη παντός δικαιώματος.
         </p>
       </div>
     </footer>

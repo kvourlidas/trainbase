@@ -21,12 +21,12 @@ export type Trainer = {
 
 export const trainer: Trainer = {
   name: "Alex Rivera",
-  title: "Certified Strength & Conditioning Coach",
+  title: "Πιστοποιημένος Προπονητής Δύναμης & Φυσικής Κατάστασης",
   photo: "/placeholders/trainer-photo.svg",
   bio: [
-    "Alex has spent over a decade coaching people through structured, sustainable training — from complete beginners taking their first steps into fitness to advanced lifters chasing specific strength goals.",
-    "After starting out coaching in commercial gyms, Alex became focused on making high-quality programming accessible outside the gym floor, which is what led to building TrainBase: a way to hand people the same structured programs used with in-person clients, wherever they train.",
-    "Alex also has a particular focus on adaptive fitness, working with clients managing injuries, chronic conditions, and mobility limitations to make sure a lack of a 'standard' program is never a barrier to training consistently.",
+    "Ο Alex έχει περάσει πάνω από μια δεκαετία καθοδηγώντας ανθρώπους μέσα από δομημένη, βιώσιμη προπόνηση — από απόλυτους αρχάριους που κάνουν τα πρώτα τους βήματα στο fitness, μέχρι προχωρημένους αθλητές που κυνηγούν συγκεκριμένους στόχους δύναμης.",
+    "Αφού ξεκίνησε προπονώντας σε εμπορικά γυμναστήρια, ο Alex επικεντρώθηκε στο να κάνει τον υψηλής ποιότητας σχεδιασμό προπόνησης προσβάσιμο και εκτός γυμναστηρίου, κάτι που τον οδήγησε στη δημιουργία του TrainBase: έναν τρόπο να δίνει στον κόσμο τα ίδια δομημένα προγράμματα που χρησιμοποιεί με πελάτες δια ζώσης, όπου κι αν προπονούνται.",
+    "Ο Alex δίνει επίσης ιδιαίτερη έμφαση στο προσαρμοσμένο fitness, συνεργαζόμενος με πελάτες που διαχειρίζονται τραυματισμούς, χρόνιες παθήσεις και περιορισμούς κινητικότητας, ώστε η έλλειψη ενός «τυπικού» προγράμματος να μην αποτελεί ποτέ εμπόδιο στη συνεπή προπόνηση.",
   ],
   certifications: [
     { title: "Certified Strength and Conditioning Specialist (CSCS)", issuer: "NSCA", year: 2015 },
@@ -35,30 +35,30 @@ export const trainer: Trainer = {
   ],
   experience: [
     {
-      role: "Head Trainer",
+      role: "Επικεφαλής Προπονητής",
       organization: "TrainBase",
-      period: "2022 — Present",
+      period: "2022 — Σήμερα",
       description:
-        "Designs and maintains all TrainBase programs across home workouts, gym programming, calisthenics, and adaptive fitness.",
+        "Σχεδιάζει και συντηρεί όλα τα προγράμματα του TrainBase, από προπονήσεις στο σπίτι μέχρι προγράμματα γυμναστηρίου, καλισθενικά και προσαρμοσμένο fitness.",
     },
     {
-      role: "Personal Trainer",
+      role: "Προσωπικός Προπονητής",
       organization: "Ironclad Athletics",
       period: "2016 — 2022",
       description:
-        "Coached over 200 one-on-one clients through strength, conditioning, and rehab-adjacent programming.",
+        "Καθοδήγησε πάνω από 200 πελάτες σε ατομική βάση μέσα από προγράμματα δύναμης, φυσικής κατάστασης και υποστηρικτικά αποκατάστασης.",
     },
     {
-      role: "Assistant Coach",
+      role: "Βοηθός Προπονητή",
       organization: "City Fitness Club",
       period: "2013 — 2016",
-      description: "Led group strength classes and built entry-level programming for new gym members.",
+      description: "Καθοδήγησε ομαδικά μαθήματα δύναμης και δημιούργησε εισαγωγικά προγράμματα για νέα μέλη του γυμναστηρίου.",
     },
   ],
   specialties: [
-    "Beginner strength training",
-    "Barbell programming",
-    "Calisthenics progressions",
-    "Adaptive & inclusive fitness",
+    "Προπόνηση δύναμης για αρχάριους",
+    "Σχεδιασμός προπόνησης με μπάρα",
+    "Προόδοι καλισθενικών",
+    "Προσαρμοσμένο & συμπεριληπτικό fitness",
   ],
 };

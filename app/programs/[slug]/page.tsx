@@ -42,9 +42,9 @@ export async function generateMetadata({
 }
 
 const levelLabel = {
-  beginner: "Beginner",
-  intermediate: "Intermediate",
-  advanced: "Advanced",
+  beginner: "Αρχάριος",
+  intermediate: "Μεσαίο επίπεδο",
+  advanced: "Προχωρημένος",
 };
 
 export default async function ProgramPage({
@@ -66,23 +66,23 @@ export default async function ProgramPage({
       <JsonLd data={courseJsonLd(program)} />
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: "Home", url: "/" },
-          { name: "Programs", url: "/programs" },
+          { name: "Αρχική", url: "/" },
+          { name: "Προγράμματα", url: "/programs" },
           { name: program.title, url: `/programs/${program.slug}` },
         ])}
       />
 
-      <nav aria-label="Breadcrumb" className="text-sm text-neutral-500">
+      <nav aria-label="Διαδρομή πλοήγησης" className="text-sm text-neutral-500">
         <ol className="flex flex-wrap items-center gap-1">
           <li>
             <Link href="/" className="hover:text-neutral-300">
-              Home
+              Αρχική
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
             <Link href="/programs" className="hover:text-neutral-300">
-              Programs
+              Προγράμματα
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -93,7 +93,7 @@ export default async function ProgramPage({
       <div className="relative mt-6 aspect-[2/1] w-full overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
         <Image
           src={program.coverImage}
-          alt={`${program.title} cover`}
+          alt={`Εξώφυλλο για ${program.title}`}
           fill
           sizes="(min-width: 768px) 768px, 100vw"
           className="object-cover"
@@ -112,10 +112,10 @@ export default async function ProgramPage({
         )}
         <span className="rounded-full bg-white/5 px-3 py-1">{levelLabel[program.level]}</span>
         <span className="rounded-full bg-white/5 px-3 py-1">
-          {program.durationWeeks} weeks
+          {program.durationWeeks} εβδομάδες
         </span>
         <span className="rounded-full bg-white/5 px-3 py-1">
-          {program.sessionsPerWeek}x / week
+          {program.sessionsPerWeek}x / εβδομάδα
         </span>
       </div>
 
@@ -124,7 +124,7 @@ export default async function ProgramPage({
 
       <div className="mt-8">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-400">
-          Equipment needed
+          Απαιτούμενος εξοπλισμός
         </h2>
         <ul className="mt-2 flex flex-wrap gap-2">
           {program.equipment.map((item) => (
@@ -139,7 +139,7 @@ export default async function ProgramPage({
       </div>
 
       <div className="mt-12 space-y-10">
-        <h2 className="text-2xl font-bold text-white">What&apos;s included</h2>
+        <h2 className="text-2xl font-bold text-white">Τι περιλαμβάνεται</h2>
         {program.workouts.map((workout) => (
           <div key={workout.title}>
             <h3 className="text-lg font-semibold text-white">{workout.title}</h3>
@@ -148,13 +148,13 @@ export default async function ProgramPage({
                 <thead className="bg-white/5 text-neutral-400">
                   <tr>
                     <th scope="col" className="px-4 py-3 font-medium">
-                      Exercise
+                      Άσκηση
                     </th>
                     <th scope="col" className="px-4 py-3 font-medium">
-                      Sets
+                      Σετ
                     </th>
                     <th scope="col" className="px-4 py-3 font-medium">
-                      Reps
+                      Επαναλήψεις
                     </th>
                   </tr>
                 </thead>
@@ -165,7 +165,7 @@ export default async function ProgramPage({
                         <span className="relative hidden h-10 w-10 shrink-0 overflow-hidden rounded-md bg-neutral-900 sm:block">
                           <Image
                             src={exercise.demoImage}
-                            alt={`${exercise.name} demo`}
+                            alt={`Επίδειξη για ${exercise.name}`}
                             fill
                             sizes="40px"
                             className="object-cover"
@@ -185,15 +185,15 @@ export default async function ProgramPage({
       </div>
 
       <div className="mt-16 rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-        <h2 className="text-lg font-semibold text-white">Have questions about this program?</h2>
+        <h2 className="text-lg font-semibold text-white">Έχεις ερωτήσεις για αυτό το πρόγραμμα;</h2>
         <p className="mt-2 text-sm text-neutral-400">
-          Reach out and we&apos;ll help you figure out if it&apos;s the right fit.
+          Επικοινώνησε μαζί μας και θα σε βοηθήσουμε να καταλάβεις αν σου ταιριάζει.
         </p>
         <Link
           href="/contact"
           className="mt-4 inline-block rounded-md bg-orange-500 px-5 py-2.5 text-sm font-semibold text-neutral-950 hover:bg-orange-400"
         >
-          Contact us
+          Επικοινώνησε μαζί μας
         </Link>
       </div>
     </div>

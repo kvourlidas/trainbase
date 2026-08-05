@@ -5,6 +5,8 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationJsonLd } from "@/lib/jsonld";
+import { createClient } from "@/lib/supabase/server";
+import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { APP_NAME, TAGLINE, SITE_DESCRIPTION, SITE_URL } from "@/config/site";
 
 const geistSans = Geist({
@@ -45,19 +47,26 @@ export const viewport: Viewport = {
   themeColor: "#0a0a0a",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let userEmail: string | null = null;
+  if (isSupabaseConfigured) {
+    const supabase = await createClient();
+    const { data } = await supabase.auth.getClaims();
+    userEmail = data?.claims.email ?? null;
+  }
+
   return (
     <html
-      lang="en"
+      lang="el"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-neutral-950 text-neutral-100">
         <JsonLd data={organizationJsonLd()} />
-        <Nav />
+        <Nav userEmail={userEmail} />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

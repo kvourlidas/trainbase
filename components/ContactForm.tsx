@@ -34,7 +34,7 @@ export function ContactForm() {
         role="status"
         className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-6 text-emerald-300"
       >
-        Thanks — your message has been sent. We&apos;ll get back to you soon.
+        Ευχαριστούμε — το μήνυμά σου στάλθηκε. Θα επικοινωνήσουμε μαζί σου σύντομα.
       </div>
     );
   }
@@ -43,7 +43,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-neutral-300">
-          Name
+          Όνομα
         </label>
         <input
           id="name"
@@ -71,7 +71,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-neutral-300">
-          Message
+          Μήνυμα
         </label>
         <textarea
           id="message"
@@ -84,7 +84,7 @@ export function ContactForm() {
 
       {status === "error" && (
         <p role="alert" className="text-sm text-red-400">
-          Something went wrong sending your message. Please try again.
+          Κάτι πήγε στραβά κατά την αποστολή του μηνύματος. Δοκίμασε ξανά.
         </p>
       )}
 
@@ -93,7 +93,7 @@ export function ContactForm() {
         disabled={status === "submitting"}
         className="rounded-md bg-orange-500 px-6 py-2.5 text-sm font-semibold text-neutral-950 transition-colors hover:bg-orange-400 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "submitting" ? "Sending…" : "Send message"}
+        {status === "submitting" ? "Αποστολή…" : "Αποστολή μηνύματος"}
       </button>
     </form>
   );

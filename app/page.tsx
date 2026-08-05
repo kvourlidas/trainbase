@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { APP_NAME, TAGLINE, SITE_DESCRIPTION } from "@/config/site";
@@ -12,56 +13,66 @@ export const metadata: Metadata = {
 
 const reasons = [
   {
-    title: "Built by a real coach",
+    title: "Σχεδιασμένο από πραγματικό προπονητή",
     description:
-      "Every program is designed by a certified trainer, not generated — the same structure used with in-person clients.",
+      "Κάθε πρόγραμμα σχεδιάζεται από πιστοποιημένο προπονητή, όχι από μηχανή — η ίδια δομή που χρησιμοποιείται και με πελάτες δια ζώσης.",
   },
   {
-    title: "Train wherever you are",
+    title: "Προπονήσου όπου κι αν είσαι",
     description:
-      "Home, gym, or anywhere in between. Pick a category that matches your setup and goals.",
+      "Σπίτι, γυμναστήριο, ή οτιδήποτε ενδιάμεσο. Διάλεξε την κατηγορία που ταιριάζει στον εξοπλισμό και τους στόχους σου.",
   },
   {
-    title: "Progressions that make sense",
+    title: "Προόδοι που βγάζουν νόημα",
     description:
-      "Programs are structured week by week so you always know what to do next and why.",
+      "Τα προγράμματα είναι δομημένα εβδομάδα προς εβδομάδα, ώστε να ξέρεις πάντα τι ακολουθεί και γιατί.",
   },
   {
-    title: "Built to be adapted",
+    title: "Φτιαγμένο για να προσαρμόζεται",
     description:
-      "Adaptive fitness programming means training doesn't stop because of an injury or limitation.",
+      "Ο προσαρμοσμένος σχεδιασμός σημαίνει ότι η προπόνηση δεν σταματά λόγω τραυματισμού ή περιορισμού.",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-6 pt-20 pb-16 text-center sm:pt-28">
-        <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-          {TAGLINE}
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-400">
-          {SITE_DESCRIPTION}
-        </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            href="/programs"
-            className="rounded-md bg-orange-500 px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:bg-orange-400"
-          >
-            Browse programs
-          </Link>
-          <Link
-            href="/about"
-            className="rounded-md border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-          >
-            Meet your trainer
-          </Link>
+      <section className="relative isolate flex min-h-[560px] items-center overflow-hidden">
+        <Image
+          src="/images/Banner.png"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-neutral-950/70" />
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+            {TAGLINE}
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-300">
+            {SITE_DESCRIPTION}
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/programs"
+              className="rounded-md bg-orange-500 px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:bg-orange-400"
+            >
+              Δες τα προγράμματα
+            </Link>
+            <Link
+              href="/about"
+              className="rounded-md border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Γνώρισε τον προπονητή σου
+            </Link>
+          </div>
         </div>
       </section>
 
       <section aria-labelledby="categories-heading" className="mx-auto max-w-6xl px-6 py-16">
         <h2 id="categories-heading" className="text-2xl font-bold text-white">
-          Find your training style
+          Βρες το στυλ προπόνησής σου
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((category) => (
@@ -73,7 +84,7 @@ export default function HomePage() {
       <section aria-labelledby="why-heading" className="border-y border-white/10 bg-white/[0.03]">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <h2 id="why-heading" className="text-2xl font-bold text-white">
-            Why train with {APP_NAME}
+            Γιατί να προπονηθείς με το {APP_NAME}
           </h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2">
             {reasons.map((reason) => (
@@ -88,16 +99,16 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-6 py-20 text-center">
         <h2 className="text-2xl font-bold text-white sm:text-3xl">
-          Ready to start training?
+          Έτοιμος να ξεκινήσεις;
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-neutral-400">
-          Pick a program that fits where you train and start this week.
+          Διάλεξε ένα πρόγραμμα που ταιριάζει στο πού προπονείσαι και ξεκίνα αυτή την εβδομάδα.
         </p>
         <Link
           href="/programs"
           className="mt-8 inline-block rounded-md bg-orange-500 px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:bg-orange-400"
         >
-          View all programs
+          Δες όλα τα προγράμματα
         </Link>
       </section>
     </>

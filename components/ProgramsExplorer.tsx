@@ -5,6 +5,8 @@ import type { Category } from "@/content/categories";
 import type { Program } from "@/content/programs";
 import { ProgramCard } from "@/components/ProgramCard";
 
+type EquipmentFilter = "with-equipment" | "no-equipment" | null;
+
 export function ProgramsExplorer({
   programs,
   categories,
@@ -13,13 +15,20 @@ export function ProgramsExplorer({
   categories: Category[];
 }) {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [equipmentFilter, setEquipmentFilter] = useState<EquipmentFilter>(null);
 
-  // Pick up an initial ?category= from a direct link (e.g. the homepage
-  // category cards) without forcing this page to render dynamically.
+  // Pick up an initial ?category= / ?equipment= from a direct link (e.g. the
+  // homepage category cards) without forcing this page to render dynamically.
   useEffect(() => {
-    const slug = new URLSearchParams(window.location.search).get("category");
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("category");
+    const equipment = params.get("equipment");
+
     if (slug && categories.some((category) => category.slug === slug)) {
       setActiveCategory(slug);
+    }
+    if (equipment === "with-equipment" || equipment === "no-equipment") {
+      setEquipmentFilter(equipment);
     }
   }, [categories]);
 
@@ -28,23 +37,59 @@ export function ProgramsExplorer({
     return programs.filter((program) => program.categorySlug === activeCategory);
   }, [programs, activeCategory]);
 
+  // Only offer the equipment/no-equipment split when every program in the
+  // current category is tagged with requiresEquipment and both sides exist.
+  const hasEquipmentSplit =
+    activeCategory !== "all" &&
+    filtered.length > 0 &&
+    filtered.every((program) => program.requiresEquipment !== undefined) &&
+    filtered.some((program) => program.requiresEquipment) &&
+    filtered.some((program) => !program.requiresEquipment);
+
+  const visiblePrograms = useMemo(() => {
+    if (!hasEquipmentSplit || !equipmentFilter) return filtered;
+    return filtered.filter((program) =>
+      equipmentFilter === "with-equipment" ? program.requiresEquipment : !program.requiresEquipment
+    );
+  }, [filtered, hasEquipmentSplit, equipmentFilter]);
+
+  function updateUrl(params: URLSearchParams) {
+    const query = params.toString();
+    window.history.replaceState(null, "", query ? `/programs?${query}` : "/programs");
+  }
+
   function selectCategory(slug: string) {
     setActiveCategory(slug);
+    setEquipmentFilter(null);
     const params = new URLSearchParams(window.location.search);
     if (slug === "all") {
       params.delete("category");
     } else {
       params.set("category", slug);
     }
-    const query = params.toString();
-    window.history.replaceState(null, "", query ? `/programs?${query}` : "/programs");
+    params.delete("equipment");
+    updateUrl(params);
+  }
+
+  function selectEquipment(value: "with-equipment" | "no-equipment") {
+    setEquipmentFilter(value);
+    const params = new URLSearchParams(window.location.search);
+    params.set("equipment", value);
+    updateUrl(params);
+  }
+
+  function clearEquipment() {
+    setEquipmentFilter(null);
+    const params = new URLSearchParams(window.location.search);
+    params.delete("equipment");
+    updateUrl(params);
   }
 
   return (
     <div>
       <div
         role="group"
-        aria-label="Filter programs by category"
+        aria-label="Φιλτράρισμα προγραμμάτων ανά κατηγορία"
         className="flex flex-wrap gap-2"
       >
         <button
@@ -57,7 +102,7 @@ export function ProgramsExplorer({
               : "bg-white/5 text-neutral-300 hover:bg-white/10"
           }`}
         >
-          All programs
+          Όλα τα προγράμματα
         </button>
         {categories.map((category) => (
           <button
@@ -78,13 +123,82 @@ export function ProgramsExplorer({
 
       {filtered.length === 0 ? (
         <p className="mt-12 text-center text-neutral-400">
-          No programs in this category yet — check back soon.
+          Δεν υπάρχουν ακόμα προγράμματα σε αυτή την κατηγορία — έλα ξανά σύντομα.
         </p>
+      ) : hasEquipmentSplit && !equipmentFilter ? (
+        <div className="mt-8 grid max-w-2xl gap-6 sm:grid-cols-2">
+          <button
+            type="button"
+            onClick={() => selectEquipment("no-equipment")}
+            className="group flex flex-col items-start rounded-xl border border-white/10 bg-white/5 p-6 text-left transition-colors hover:border-orange-500/50 hover:bg-white/[0.08]"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-orange-500"
+              aria-hidden="true"
+            >
+              <path d="M12 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 4v6m0 0-4 6m4-6 4 6m-4-9-4 3m4-3 4 3" />
+            </svg>
+            <h3 className="mt-4 text-lg font-semibold text-white">Χωρίς εξοπλισμό</h3>
+            <p className="mt-2 text-sm text-neutral-400">
+              Προγράμματα που χρησιμοποιούν μόνο το σωματικό σου βάρος.
+            </p>
+            <span className="mt-4 text-sm font-medium text-orange-400 group-hover:text-orange-300">
+              Δες τα προγράμματα →
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => selectEquipment("with-equipment")}
+            className="group flex flex-col items-start rounded-xl border border-white/10 bg-white/5 p-6 text-left transition-colors hover:border-orange-500/50 hover:bg-white/[0.08]"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-orange-500"
+              aria-hidden="true"
+            >
+              <path d="M4 9v6M2 10.5v3M22 10.5v3M20 9v6M7 12h10M6 9v6M18 9v6" />
+            </svg>
+            <h3 className="mt-4 text-lg font-semibold text-white">Με εξοπλισμό</h3>
+            <p className="mt-2 text-sm text-neutral-400">
+              Προγράμματα με αλτήρες, λάστιχα αντίστασης ή kettlebell.
+            </p>
+            <span className="mt-4 text-sm font-medium text-orange-400 group-hover:text-orange-300">
+              Δες τα προγράμματα →
+            </span>
+          </button>
+        </div>
       ) : (
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((program) => (
-            <ProgramCard key={program.slug} program={program} />
-          ))}
+        <div className="mt-8">
+          {hasEquipmentSplit && equipmentFilter && (
+            <button
+              type="button"
+              onClick={clearEquipment}
+              className="mb-6 text-sm font-medium text-orange-400 hover:text-orange-300"
+            >
+              ← Πίσω
+            </button>
+          )}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {visiblePrograms.map((program) => (
+              <ProgramCard key={program.slug} program={program} />
+            ))}
+          </div>
         </div>
       )}
     </div>

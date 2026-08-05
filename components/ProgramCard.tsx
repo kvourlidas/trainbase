@@ -4,9 +4,9 @@ import type { Program } from "@/content/programs";
 import { getCategoryBySlug } from "@/content/categories";
 
 const levelLabel: Record<Program["level"], string> = {
-  beginner: "Beginner",
-  intermediate: "Intermediate",
-  advanced: "Advanced",
+  beginner: "Αρχάριος",
+  intermediate: "Μεσαίο επίπεδο",
+  advanced: "Προχωρημένος",
 };
 
 export function ProgramCard({ program }: { program: Program }) {
@@ -20,7 +20,7 @@ export function ProgramCard({ program }: { program: Program }) {
       <div className="relative aspect-[3/2] w-full overflow-hidden bg-neutral-900">
         <Image
           src={program.coverImage}
-          alt={`${program.title} cover`}
+          alt={`Εξώφυλλο για ${program.title}`}
           fill
           sizes="(min-width: 768px) 33vw, 100vw"
           className="object-cover transition-transform group-hover:scale-105"
@@ -35,7 +35,7 @@ export function ProgramCard({ program }: { program: Program }) {
         <h3 className="mt-2 text-lg font-semibold text-white">{program.title}</h3>
         <p className="mt-2 flex-1 text-sm text-neutral-400">{program.summary}</p>
         <div className="mt-4 text-xs text-neutral-500">
-          {program.durationWeeks} weeks · {program.sessionsPerWeek}x / week
+          {program.durationWeeks} εβδομάδες · {program.sessionsPerWeek}x / εβδομάδα
         </div>
       </div>
     </Link>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Category } from "@/content/categories";
 
 const icons: Record<Category["icon"], React.ReactNode> = {
@@ -20,8 +21,17 @@ export function CategoryCard({ category }: { category: Category }) {
   return (
     <Link
       href={`/programs?category=${category.slug}`}
-      className="group flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-orange-500/50 hover:bg-white/[0.08]"
+      className="group relative isolate flex min-h-[85vh] flex-col overflow-hidden rounded-xl border border-white/10 p-6 transition-colors hover:border-orange-500/50 sm:min-h-[80vh]"
     >
+      <Image
+        src={category.image}
+        alt=""
+        fill
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        className="-z-10 object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-neutral-950 via-neutral-950/75 to-neutral-950/20" />
+
       <svg
         width="32"
         height="32"
@@ -31,15 +41,15 @@ export function CategoryCard({ category }: { category: Category }) {
         strokeWidth="1.75"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-orange-500"
+        className="text-orange-400"
         aria-hidden="true"
       >
         {icons[category.icon]}
       </svg>
       <h3 className="mt-4 text-lg font-semibold text-white">{category.name}</h3>
-      <p className="mt-2 text-sm text-neutral-400">{category.description}</p>
-      <span className="mt-4 text-sm font-medium text-orange-400 group-hover:text-orange-300">
-        View programs →
+      <p className="mt-2 text-sm text-neutral-200">{category.description}</p>
+      <span className="mt-auto pt-4 text-sm font-medium text-orange-400 group-hover:text-orange-300">
+        Δες τα προγράμματα →
       </span>
     </Link>
   );

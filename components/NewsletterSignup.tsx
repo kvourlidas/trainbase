@@ -9,16 +9,16 @@
 export function NewsletterSignup() {
   return (
     <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-      <h3 className="text-base font-semibold text-white">Get new programs in your inbox</h3>
+      <h3 className="text-base font-semibold text-white">Λάβε νέα προγράμματα στο inbox σου</h3>
       <p className="mt-1 text-sm text-neutral-400">
-        Occasional emails when new programs drop. No spam.
+        Περιστασιακά emails όταν βγαίνουν νέα προγράμματα. Καθόλου spam.
       </p>
       <form
         className="mt-4 flex flex-col gap-2 sm:flex-row"
         onSubmit={(e) => e.preventDefault()}
       >
         <label htmlFor="newsletter-email" className="sr-only">
-          Email address
+          Διεύθυνση email
         </label>
         <input
           id="newsletter-email"
@@ -35,7 +35,7 @@ export function NewsletterSignup() {
           aria-disabled="true"
           className="whitespace-nowrap rounded-md bg-neutral-700 px-4 py-2 text-sm font-semibold text-neutral-300 cursor-not-allowed"
         >
-          Coming soon
+          Σύντομα κοντά σας
         </button>
       </form>
     </div>

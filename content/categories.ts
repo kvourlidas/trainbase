@@ -3,36 +3,41 @@ export type Category = {
   name: string;
   description: string;
   icon: "home" | "dumbbell" | "bodyweight" | "adaptive";
+  image: string;
 };
 
 export const categories: Category[] = [
   {
     slug: "home-workouts",
-    name: "Home Workouts",
+    name: "Προπονήσεις στο Σπίτι",
     description:
-      "No gym, no problem. Structured strength and conditioning sessions that use minimal equipment so you can train in your living room.",
+      "Χωρίς γυμναστήριο, κανένα πρόβλημα. Δομημένες συνεδρίες δύναμης και φυσικής κατάστασης με ελάχιστο εξοπλισμό, ώστε να προπονείσαι στο σαλόνι σου.",
     icon: "home",
+    image: "/images/categories/home-workouts.png",
   },
   {
     slug: "gym-programs",
-    name: "Gym Programs",
+    name: "Προγράμματα Γυμναστηρίου",
     description:
-      "Progressive strength programs built around barbells, dumbbells, and machines for lifters who want a structured plan on the gym floor.",
+      "Προοδευτικά προγράμματα δύναμης με μπάρες, αλτήρες και μηχανήματα, για όσους θέλουν δομημένο πλάνο μέσα στο γυμναστήριο.",
     icon: "dumbbell",
+    image: "/images/categories/gym-programs.jpg",
   },
   {
     slug: "calisthenics",
-    name: "Calisthenics",
+    name: "Καλισθενικά",
     description:
-      "Bodyweight skill and strength progressions, from your first push-up to pull-ups, dips, and beyond.",
+      "Προόδοι δεξιοτήτων και δύναμης με το σωματικό βάρος, από την πρώτη σου κάμψη μέχρι έλξεις, βυθίσεις και πέρα.",
     icon: "bodyweight",
+    image: "/images/categories/calisthenics.jpg",
   },
   {
     slug: "adaptive-fitness",
-    name: "Adaptive Fitness",
+    name: "Προσαρμοσμένο Fitness",
     description:
-      "Programs designed to be modified around injuries, mobility limitations, and individual needs, so training stays consistent and safe.",
+      "Προγράμματα σχεδιασμένα να προσαρμόζονται σε τραυματισμούς, περιορισμούς κινητικότητας και ατομικές ανάγκες, ώστε η προπόνηση να παραμένει σταθερή και ασφαλής.",
     icon: "adaptive",
+    image: "/images/categories/adaptive-fitness.jpg",
   },
 ];
 
