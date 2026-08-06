@@ -16,7 +16,7 @@ export default function OpengraphImage() {
           alignItems: "flex-start",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+          background: "linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)",
         }}
       >
         <div
@@ -24,7 +24,7 @@ export default function OpengraphImage() {
             display: "flex",
             alignItems: "center",
             gap: 16,
-            color: "#f97316",
+            color: "#ea580c",
             fontSize: 40,
             fontWeight: 700,
           }}
@@ -44,7 +44,7 @@ export default function OpengraphImage() {
             marginTop: 32,
             fontSize: 56,
             fontWeight: 700,
-            color: "#f8fafc",
+            color: "#1c1917",
             maxWidth: 900,
           }}
         >

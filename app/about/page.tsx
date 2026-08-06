@@ -17,7 +17,7 @@ export default function AboutPage() {
       <JsonLd data={personJsonLd(trainer)} />
 
       <div className="flex flex-col items-start gap-8 sm:flex-row">
-        <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
+        <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-xl border border-stone-200 bg-stone-100">
           <Image
             src={trainer.photo}
             alt={`Πορτρέτο του ${trainer.name}`}
@@ -28,13 +28,13 @@ export default function AboutPage() {
           />
         </div>
         <div>
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">{trainer.name}</h1>
-          <p className="mt-1 text-orange-400">{trainer.title}</p>
+          <h1 className="text-3xl font-bold text-stone-900 sm:text-4xl">{trainer.name}</h1>
+          <p className="mt-1 text-orange-600">{trainer.title}</p>
           <ul className="mt-4 flex flex-wrap gap-2">
             {trainer.specialties.map((specialty) => (
               <li
                 key={specialty}
-                className="rounded-full border border-white/10 px-3 py-1 text-sm text-neutral-300"
+                className="rounded-full border border-stone-200 px-3 py-1 text-sm text-stone-600"
               >
                 {specialty}
               </li>
@@ -43,37 +43,37 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="mt-12 space-y-4 text-neutral-300">
+      <div className="mt-12 space-y-4 text-stone-600">
         {trainer.bio.map((paragraph, index) => (
           <p key={index}>{paragraph}</p>
         ))}
       </div>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold text-white">Εμπειρία</h2>
-        <ol className="mt-6 space-y-6 border-l border-white/10 pl-6">
+        <h2 className="text-2xl font-bold text-stone-900">Εμπειρία</h2>
+        <ol className="mt-6 space-y-6 border-l border-stone-200 pl-6">
           {trainer.experience.map((item) => (
             <li key={`${item.role}-${item.organization}`}>
-              <p className="text-sm font-medium text-orange-400">{item.period}</p>
-              <h3 className="mt-1 text-lg font-semibold text-white">
+              <p className="text-sm font-medium text-orange-600">{item.period}</p>
+              <h3 className="mt-1 text-lg font-semibold text-stone-900">
                 {item.role} · {item.organization}
               </h3>
-              <p className="mt-1 text-sm text-neutral-400">{item.description}</p>
+              <p className="mt-1 text-sm text-stone-500">{item.description}</p>
             </li>
           ))}
         </ol>
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-bold text-white">Πιστοποιήσεις</h2>
+        <h2 className="text-2xl font-bold text-stone-900">Πιστοποιήσεις</h2>
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           {trainer.certifications.map((cert) => (
             <li
               key={cert.title}
-              className="rounded-xl border border-white/10 bg-white/5 p-4"
+              className="rounded-xl border border-stone-200 bg-white p-4 shadow-sm"
             >
-              <p className="font-semibold text-white">{cert.title}</p>
-              <p className="mt-1 text-sm text-neutral-400">
+              <p className="font-semibold text-stone-900">{cert.title}</p>
+              <p className="mt-1 text-sm text-stone-500">
                 {cert.issuer} · {cert.year}
               </p>
             </li>

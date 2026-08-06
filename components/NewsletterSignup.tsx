@@ -8,9 +8,9 @@
  */
 export function NewsletterSignup() {
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-      <h3 className="text-base font-semibold text-white">Λάβε νέα προγράμματα στο inbox σου</h3>
-      <p className="mt-1 text-sm text-neutral-400">
+    <div className="rounded-xl border border-stone-200 bg-stone-50 p-6">
+      <h3 className="text-base font-semibold text-stone-900">Λάβε νέα προγράμματα στο inbox σου</h3>
+      <p className="mt-1 text-sm text-stone-500">
         Περιστασιακά emails όταν βγαίνουν νέα προγράμματα. Καθόλου spam.
       </p>
       <form
@@ -27,13 +27,13 @@ export function NewsletterSignup() {
           placeholder="you@example.com"
           disabled
           aria-disabled="true"
-          className="w-full rounded-md border border-white/10 bg-neutral-900 px-3 py-2 text-sm text-neutral-300 placeholder:text-neutral-500 disabled:cursor-not-allowed"
+          className="w-full rounded-md border border-stone-300 bg-white px-3 py-2 text-sm text-stone-700 placeholder:text-stone-400 disabled:cursor-not-allowed"
         />
         <button
           type="submit"
           disabled
           aria-disabled="true"
-          className="whitespace-nowrap rounded-md bg-neutral-700 px-4 py-2 text-sm font-semibold text-neutral-300 cursor-not-allowed"
+          className="whitespace-nowrap rounded-md bg-stone-200 px-4 py-2 text-sm font-semibold text-stone-500 cursor-not-allowed"
         >
           Σύντομα κοντά σας
         </button>

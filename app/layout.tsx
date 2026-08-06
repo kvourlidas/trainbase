@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#fafaf9",
 };
 
 export default async function RootLayout({
@@ -64,7 +64,7 @@ export default async function RootLayout({
       lang="el"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-neutral-950 text-neutral-100">
+      <body className="min-h-full flex flex-col bg-stone-50 text-stone-900">
         <JsonLd data={organizationJsonLd()} />
         <Nav userEmail={userEmail} />
         <main className="flex-1">{children}</main>

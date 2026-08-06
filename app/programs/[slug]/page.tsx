@@ -72,25 +72,25 @@ export default async function ProgramPage({
         ])}
       />
 
-      <nav aria-label="Διαδρομή πλοήγησης" className="text-sm text-neutral-500">
+      <nav aria-label="Διαδρομή πλοήγησης" className="text-sm text-stone-400">
         <ol className="flex flex-wrap items-center gap-1">
           <li>
-            <Link href="/" className="hover:text-neutral-300">
+            <Link href="/" className="hover:text-stone-600">
               Αρχική
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link href="/programs" className="hover:text-neutral-300">
+            <Link href="/programs" className="hover:text-stone-600">
               Προγράμματα
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="text-neutral-300">{program.title}</li>
+          <li className="text-stone-600">{program.title}</li>
         </ol>
       </nav>
 
-      <div className="relative mt-6 aspect-[2/1] w-full overflow-hidden rounded-xl border border-white/10 bg-neutral-900">
+      <div className="relative mt-6 aspect-[2/1] w-full overflow-hidden rounded-xl border border-stone-200 bg-stone-100">
         <Image
           src={program.coverImage}
           alt={`Εξώφυλλο για ${program.title}`}
@@ -101,36 +101,36 @@ export default async function ProgramPage({
         />
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-medium text-neutral-400">
+      <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-medium text-stone-500">
         {category && (
           <Link
             href={`/programs?category=${category.slug}`}
-            className="rounded-full bg-white/5 px-3 py-1 hover:bg-white/10"
+            className="rounded-full bg-stone-100 px-3 py-1 hover:bg-stone-200"
           >
             {category.name}
           </Link>
         )}
-        <span className="rounded-full bg-white/5 px-3 py-1">{levelLabel[program.level]}</span>
-        <span className="rounded-full bg-white/5 px-3 py-1">
+        <span className="rounded-full bg-stone-100 px-3 py-1">{levelLabel[program.level]}</span>
+        <span className="rounded-full bg-stone-100 px-3 py-1">
           {program.durationWeeks} εβδομάδες
         </span>
-        <span className="rounded-full bg-white/5 px-3 py-1">
+        <span className="rounded-full bg-stone-100 px-3 py-1">
           {program.sessionsPerWeek}x / εβδομάδα
         </span>
       </div>
 
-      <h1 className="mt-4 text-3xl font-bold text-white sm:text-4xl">{program.title}</h1>
-      <p className="mt-4 text-neutral-300">{program.description}</p>
+      <h1 className="mt-4 text-3xl font-bold text-stone-900 sm:text-4xl">{program.title}</h1>
+      <p className="mt-4 text-stone-600">{program.description}</p>
 
       <div className="mt-8">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-400">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-stone-500">
           Απαιτούμενος εξοπλισμός
         </h2>
         <ul className="mt-2 flex flex-wrap gap-2">
           {program.equipment.map((item) => (
             <li
               key={item}
-              className="rounded-full border border-white/10 px-3 py-1 text-sm text-neutral-300"
+              className="rounded-full border border-stone-200 px-3 py-1 text-sm text-stone-600"
             >
               {item}
             </li>
@@ -139,13 +139,13 @@ export default async function ProgramPage({
       </div>
 
       <div className="mt-12 space-y-10">
-        <h2 className="text-2xl font-bold text-white">Τι περιλαμβάνεται</h2>
+        <h2 className="text-2xl font-bold text-stone-900">Τι περιλαμβάνεται</h2>
         {program.workouts.map((workout) => (
           <div key={workout.title}>
-            <h3 className="text-lg font-semibold text-white">{workout.title}</h3>
-            <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
+            <h3 className="text-lg font-semibold text-stone-900">{workout.title}</h3>
+            <div className="mt-4 overflow-hidden rounded-xl border border-stone-200">
               <table className="w-full text-left text-sm">
-                <thead className="bg-white/5 text-neutral-400">
+                <thead className="bg-stone-50 text-stone-500">
                   <tr>
                     <th scope="col" className="px-4 py-3 font-medium">
                       Άσκηση
@@ -158,11 +158,11 @@ export default async function ProgramPage({
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5">
+                <tbody className="divide-y divide-stone-100">
                   {workout.exercises.map((exercise) => (
                     <tr key={exercise.name}>
-                      <td className="flex items-center gap-3 px-4 py-3 text-neutral-200">
-                        <span className="relative hidden h-10 w-10 shrink-0 overflow-hidden rounded-md bg-neutral-900 sm:block">
+                      <td className="flex items-center gap-3 px-4 py-3 text-stone-700">
+                        <span className="relative hidden h-10 w-10 shrink-0 overflow-hidden rounded-md bg-stone-100 sm:block">
                           <Image
                             src={exercise.demoImage}
                             alt={`Επίδειξη για ${exercise.name}`}
@@ -173,8 +173,8 @@ export default async function ProgramPage({
                         </span>
                         {exercise.name}
                       </td>
-                      <td className="px-4 py-3 text-neutral-400">{exercise.sets}</td>
-                      <td className="px-4 py-3 text-neutral-400">{exercise.reps}</td>
+                      <td className="px-4 py-3 text-stone-500">{exercise.sets}</td>
+                      <td className="px-4 py-3 text-stone-500">{exercise.reps}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -184,14 +184,14 @@ export default async function ProgramPage({
         ))}
       </div>
 
-      <div className="mt-16 rounded-xl border border-white/10 bg-white/5 p-6 text-center">
-        <h2 className="text-lg font-semibold text-white">Έχεις ερωτήσεις για αυτό το πρόγραμμα;</h2>
-        <p className="mt-2 text-sm text-neutral-400">
+      <div className="mt-16 rounded-xl border border-stone-200 bg-stone-50 p-6 text-center">
+        <h2 className="text-lg font-semibold text-stone-900">Έχεις ερωτήσεις για αυτό το πρόγραμμα;</h2>
+        <p className="mt-2 text-sm text-stone-500">
           Επικοινώνησε μαζί μας και θα σε βοηθήσουμε να καταλάβεις αν σου ταιριάζει.
         </p>
         <Link
           href="/contact"
-          className="mt-4 inline-block rounded-md bg-orange-500 px-5 py-2.5 text-sm font-semibold text-neutral-950 hover:bg-orange-400"
+          className="mt-4 inline-block rounded-md bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-600"
         >
           Επικοινώνησε μαζί μας
         </Link>

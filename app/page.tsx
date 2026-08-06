@@ -45,24 +45,24 @@ export default function HomePage() {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-neutral-950/70" />
+        <div className="absolute inset-0 bg-stone-900/60" />
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             {TAGLINE}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-300">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-stone-100">
             {SITE_DESCRIPTION}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/programs"
-              className="rounded-md bg-orange-500 px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:bg-orange-400"
+              className="rounded-md bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-950/30 transition-colors hover:bg-orange-600"
             >
               Δες τα προγράμματα
             </Link>
             <Link
               href="/about"
-              className="rounded-md border border-white/15 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+              className="rounded-md border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
             >
               Γνώρισε τον προπονητή σου
             </Link>
@@ -71,7 +71,7 @@ export default function HomePage() {
       </section>
 
       <section aria-labelledby="categories-heading" className="mx-auto max-w-6xl px-6 py-16">
-        <h2 id="categories-heading" className="text-2xl font-bold text-white">
+        <h2 id="categories-heading" className="text-2xl font-bold text-stone-900">
           Βρες το στυλ προπόνησής σου
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -81,16 +81,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section aria-labelledby="why-heading" className="border-y border-white/10 bg-white/[0.03]">
+      <section aria-labelledby="why-heading" className="border-y border-stone-200 bg-stone-50">
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <h2 id="why-heading" className="text-2xl font-bold text-white">
+          <h2 id="why-heading" className="text-2xl font-bold text-stone-900">
             Γιατί να προπονηθείς με το {APP_NAME}
           </h2>
           <div className="mt-8 grid gap-8 sm:grid-cols-2">
             {reasons.map((reason) => (
               <div key={reason.title}>
-                <h3 className="text-base font-semibold text-white">{reason.title}</h3>
-                <p className="mt-2 text-sm text-neutral-400">{reason.description}</p>
+                <h3 className="text-base font-semibold text-stone-900">{reason.title}</h3>
+                <p className="mt-2 text-sm text-stone-500">{reason.description}</p>
               </div>
             ))}
           </div>
@@ -98,15 +98,15 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 text-center">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">
+        <h2 className="text-2xl font-bold text-stone-900 sm:text-3xl">
           Έτοιμος να ξεκινήσεις;
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-neutral-400">
+        <p className="mx-auto mt-4 max-w-xl text-stone-500">
           Διάλεξε ένα πρόγραμμα που ταιριάζει στο πού προπονείσαι και ξεκίνα αυτή την εβδομάδα.
         </p>
         <Link
           href="/programs"
-          className="mt-8 inline-block rounded-md bg-orange-500 px-6 py-3 text-sm font-semibold text-neutral-950 transition-colors hover:bg-orange-400"
+          className="mt-8 inline-block rounded-md bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-950/10 transition-colors hover:bg-orange-600"
         >
           Δες όλα τα προγράμματα
         </Link>

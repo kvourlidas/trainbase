@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-16">
-      <h1 className="text-3xl font-bold text-white sm:text-4xl">Επικοινωνία</h1>
-      <p className="mt-3 text-neutral-400">
+      <h1 className="text-3xl font-bold text-stone-900 sm:text-4xl">Επικοινωνία</h1>
+      <p className="mt-3 text-stone-500">
         Έχεις ερωτήσεις για κάποιο πρόγραμμα ή κάτι άλλο στο μυαλό σου; Στείλε ένα μήνυμα και θα
         επικοινωνήσουμε μαζί σου, ή στείλε μας email απευθείας στο{" "}
-        <a href={`mailto:${CONTACT_EMAIL}`} className="text-orange-400 hover:text-orange-300">
+        <a href={`mailto:${CONTACT_EMAIL}`} className="text-orange-600 hover:text-orange-500">
           {CONTACT_EMAIL}
         </a>
         .

@@ -98,8 +98,8 @@ export function ProgramsExplorer({
           aria-pressed={activeCategory === "all"}
           className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
             activeCategory === "all"
-              ? "bg-orange-500 text-neutral-950"
-              : "bg-white/5 text-neutral-300 hover:bg-white/10"
+              ? "bg-orange-500 text-white shadow-sm"
+              : "bg-stone-100 text-stone-600 hover:bg-stone-200"
           }`}
         >
           Όλα τα προγράμματα
@@ -112,8 +112,8 @@ export function ProgramsExplorer({
             aria-pressed={activeCategory === category.slug}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               activeCategory === category.slug
-                ? "bg-orange-500 text-neutral-950"
-                : "bg-white/5 text-neutral-300 hover:bg-white/10"
+                ? "bg-orange-500 text-white shadow-sm"
+                : "bg-stone-100 text-stone-600 hover:bg-stone-200"
             }`}
           >
             {category.name}
@@ -122,7 +122,7 @@ export function ProgramsExplorer({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-12 text-center text-neutral-400">
+        <p className="mt-12 text-center text-stone-500">
           Δεν υπάρχουν ακόμα προγράμματα σε αυτή την κατηγορία — έλα ξανά σύντομα.
         </p>
       ) : hasEquipmentSplit && !equipmentFilter ? (
@@ -130,7 +130,7 @@ export function ProgramsExplorer({
           <button
             type="button"
             onClick={() => selectEquipment("no-equipment")}
-            className="group flex flex-col items-start rounded-xl border border-white/10 bg-white/5 p-6 text-left transition-colors hover:border-orange-500/50 hover:bg-white/[0.08]"
+            className="group flex flex-col items-start rounded-xl border border-stone-200 bg-white p-6 text-left shadow-sm transition-all hover:border-orange-400 hover:shadow-lg"
           >
             <svg
               width="32"
@@ -146,11 +146,11 @@ export function ProgramsExplorer({
             >
               <path d="M12 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 4v6m0 0-4 6m4-6 4 6m-4-9-4 3m4-3 4 3" />
             </svg>
-            <h3 className="mt-4 text-lg font-semibold text-white">Χωρίς εξοπλισμό</h3>
-            <p className="mt-2 text-sm text-neutral-400">
+            <h3 className="mt-4 text-lg font-semibold text-stone-900">Χωρίς εξοπλισμό</h3>
+            <p className="mt-2 text-sm text-stone-500">
               Προγράμματα που χρησιμοποιούν μόνο το σωματικό σου βάρος.
             </p>
-            <span className="mt-4 text-sm font-medium text-orange-400 group-hover:text-orange-300">
+            <span className="mt-4 text-sm font-medium text-orange-600 group-hover:text-orange-500">
               Δες τα προγράμματα →
             </span>
           </button>
@@ -158,7 +158,7 @@ export function ProgramsExplorer({
           <button
             type="button"
             onClick={() => selectEquipment("with-equipment")}
-            className="group flex flex-col items-start rounded-xl border border-white/10 bg-white/5 p-6 text-left transition-colors hover:border-orange-500/50 hover:bg-white/[0.08]"
+            className="group flex flex-col items-start rounded-xl border border-stone-200 bg-white p-6 text-left shadow-sm transition-all hover:border-orange-400 hover:shadow-lg"
           >
             <svg
               width="32"
@@ -174,11 +174,11 @@ export function ProgramsExplorer({
             >
               <path d="M4 9v6M2 10.5v3M22 10.5v3M20 9v6M7 12h10M6 9v6M18 9v6" />
             </svg>
-            <h3 className="mt-4 text-lg font-semibold text-white">Με εξοπλισμό</h3>
-            <p className="mt-2 text-sm text-neutral-400">
+            <h3 className="mt-4 text-lg font-semibold text-stone-900">Με εξοπλισμό</h3>
+            <p className="mt-2 text-sm text-stone-500">
               Προγράμματα με αλτήρες, λάστιχα αντίστασης ή kettlebell.
             </p>
-            <span className="mt-4 text-sm font-medium text-orange-400 group-hover:text-orange-300">
+            <span className="mt-4 text-sm font-medium text-orange-600 group-hover:text-orange-500">
               Δες τα προγράμματα →
             </span>
           </button>
@@ -189,7 +189,7 @@ export function ProgramsExplorer({
             <button
               type="button"
               onClick={clearEquipment}
-              className="mb-6 text-sm font-medium text-orange-400 hover:text-orange-300"
+              className="mb-6 text-sm font-medium text-orange-600 hover:text-orange-500"
             >
               ← Πίσω
             </button>

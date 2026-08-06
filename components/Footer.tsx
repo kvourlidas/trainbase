@@ -4,37 +4,37 @@ import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-white/10 bg-neutral-950">
+    <footer className="mt-24 border-t border-stone-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <p className="font-bold text-white text-lg">{APP_NAME}</p>
-            <p className="mt-2 text-sm text-neutral-400">{TAGLINE}</p>
-            <div className="mt-4 flex gap-4 text-sm text-neutral-400">
-              <a href={SOCIAL_LINKS.instagram} className="hover:text-white" rel="noopener noreferrer">
+            <p className="font-bold text-stone-900 text-lg">{APP_NAME}</p>
+            <p className="mt-2 text-sm text-stone-500">{TAGLINE}</p>
+            <div className="mt-4 flex gap-4 text-sm text-stone-500">
+              <a href={SOCIAL_LINKS.instagram} className="hover:text-orange-600" rel="noopener noreferrer">
                 Instagram
               </a>
-              <a href={SOCIAL_LINKS.youtube} className="hover:text-white" rel="noopener noreferrer">
+              <a href={SOCIAL_LINKS.youtube} className="hover:text-orange-600" rel="noopener noreferrer">
                 YouTube
               </a>
             </div>
           </div>
 
-          <nav aria-label="Υποσέλιδο" className="text-sm text-neutral-400">
-            <p className="font-semibold text-neutral-200">Ιστότοπος</p>
+          <nav aria-label="Υποσέλιδο" className="text-sm text-stone-500">
+            <p className="font-semibold text-stone-700">Ιστότοπος</p>
             <ul className="mt-3 space-y-2">
               <li>
-                <Link href="/programs" className="hover:text-white">
+                <Link href="/programs" className="hover:text-orange-600">
                   Προγράμματα
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white">
+                <Link href="/about" className="hover:text-orange-600">
                   Σχετικά
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white">
+                <Link href="/contact" className="hover:text-orange-600">
                   Επικοινωνία
                 </Link>
               </li>
@@ -44,7 +44,7 @@ export function Footer() {
           <NewsletterSignup />
         </div>
 
-        <p className="mt-10 border-t border-white/10 pt-6 text-xs text-neutral-500">
+        <p className="mt-10 border-t border-stone-200 pt-6 text-xs text-stone-400">
           © {new Date().getFullYear()} {APP_NAME}. Με επιφύλαξη παντός δικαιώματος.
         </p>
       </div>

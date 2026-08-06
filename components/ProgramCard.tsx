@@ -15,9 +15,9 @@ export function ProgramCard({ program }: { program: Program }) {
   return (
     <Link
       href={`/programs/${program.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-colors hover:border-orange-500/50"
+      className="group flex flex-col overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm transition-all hover:border-orange-400 hover:shadow-lg"
     >
-      <div className="relative aspect-[3/2] w-full overflow-hidden bg-neutral-900">
+      <div className="relative aspect-[3/2] w-full overflow-hidden bg-stone-100">
         <Image
           src={program.coverImage}
           alt={`Εξώφυλλο για ${program.title}`}
@@ -27,14 +27,14 @@ export function ProgramCard({ program }: { program: Program }) {
         />
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-center gap-2 text-xs font-medium text-neutral-400">
+        <div className="flex items-center gap-2 text-xs font-medium text-stone-500">
           {category && <span>{category.name}</span>}
           <span aria-hidden="true">·</span>
           <span>{levelLabel[program.level]}</span>
         </div>
-        <h3 className="mt-2 text-lg font-semibold text-white">{program.title}</h3>
-        <p className="mt-2 flex-1 text-sm text-neutral-400">{program.summary}</p>
-        <div className="mt-4 text-xs text-neutral-500">
+        <h3 className="mt-2 text-lg font-semibold text-stone-900">{program.title}</h3>
+        <p className="mt-2 flex-1 text-sm text-stone-500">{program.summary}</p>
+        <div className="mt-4 text-xs text-stone-400">
           {program.durationWeeks} εβδομάδες · {program.sessionsPerWeek}x / εβδομάδα
         </div>
       </div>

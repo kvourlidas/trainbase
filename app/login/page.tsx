@@ -18,13 +18,13 @@ export default async function LoginPage({
 
   return (
     <div className="mx-auto max-w-md px-6 py-16">
-      <h1 className="text-3xl font-bold text-white sm:text-4xl">Σύνδεση</h1>
-      <p className="mt-3 text-neutral-400">
+      <h1 className="text-3xl font-bold text-stone-900 sm:text-4xl">Σύνδεση</h1>
+      <p className="mt-3 text-stone-500">
         Καλώς ήρθες πίσω στο {APP_NAME}.
       </p>
 
       {error && (
-        <p role="alert" className="mt-6 text-sm text-red-400">
+        <p role="alert" className="mt-6 text-sm text-red-600">
           {error}
         </p>
       )}
@@ -33,9 +33,9 @@ export default async function LoginPage({
         <LoginForm />
       </div>
 
-      <p className="mt-6 text-sm text-neutral-400">
+      <p className="mt-6 text-sm text-stone-500">
         Δεν έχεις λογαριασμό;{" "}
-        <Link href="/signup" className="text-orange-400 hover:text-orange-300">
+        <Link href="/signup" className="text-orange-600 hover:text-orange-500">
           Εγγραφή
         </Link>
       </p>

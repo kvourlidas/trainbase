@@ -24,15 +24,15 @@ export default async function AccountPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-16">
-      <h1 className="text-3xl font-bold text-white sm:text-4xl">Ο λογαριασμός μου</h1>
-      <p className="mt-3 text-neutral-400">
-        Συνδεδεμένος ως <span className="text-white">{claims.email}</span>
+      <h1 className="text-3xl font-bold text-stone-900 sm:text-4xl">Ο λογαριασμός μου</h1>
+      <p className="mt-3 text-stone-500">
+        Συνδεδεμένος ως <span className="text-stone-900">{claims.email}</span>
       </p>
 
       <form action={signOut} className="mt-10">
         <button
           type="submit"
-          className="rounded-md border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+          className="rounded-md border border-stone-300 px-5 py-2.5 text-sm font-semibold text-stone-900 transition-colors hover:bg-stone-100"
         >
           Αποσύνδεση
         </button>

@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function ProgramsPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-3xl font-bold text-white sm:text-4xl">Προγράμματα</h1>
-      <p className="mt-3 max-w-2xl text-neutral-400">
+      <h1 className="text-3xl font-bold text-stone-900 sm:text-4xl">Προγράμματα</h1>
+      <p className="mt-3 max-w-2xl text-stone-500">
         Όλα τα προγράμματα του {APP_NAME}, με δυνατότητα φιλτραρίσματος ανά στυλ προπόνησης. Διάλεξε αυτό που ταιριάζει στο πώς και πού προπονείσαι.
       </p>
 
