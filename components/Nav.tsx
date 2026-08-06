@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { APP_NAME, LOGO_URL } from "@/config/site";
-import { signOut } from "@/lib/supabase/actions";
+import { signOut } from "@/lib/auth/actions";
 
 const links = [
   { href: "/", label: "Αρχική" },
@@ -48,17 +48,12 @@ export function Nav({ userEmail }: { userEmail: string | null }) {
                 </form>
               </>
             ) : (
-              <>
-                <Link href="/login" className="transition-colors hover:text-stone-900">
-                  Σύνδεση
-                </Link>
-                <Link
-                  href="/signup"
-                  className="rounded-md bg-orange-500 px-4 py-2 text-white shadow-sm transition-colors hover:bg-orange-600"
-                >
-                  Εγγραφή
-                </Link>
-              </>
+              <Link
+                href="/login"
+                className="rounded-md bg-orange-500 px-4 py-2 text-white shadow-sm transition-colors hover:bg-orange-600"
+              >
+                Σύνδεση
+              </Link>
             )}
           </li>
         </ul>
@@ -103,14 +98,9 @@ export function Nav({ userEmail }: { userEmail: string | null }) {
                 </form>
               </div>
             ) : (
-              <div className="space-y-3">
-                <Link href="/login" className="block py-1" onClick={() => setOpen(false)}>
-                  Σύνδεση
-                </Link>
-                <Link href="/signup" className="block py-1" onClick={() => setOpen(false)}>
-                  Εγγραφή
-                </Link>
-              </div>
+              <Link href="/login" className="block py-1" onClick={() => setOpen(false)}>
+                Σύνδεση
+              </Link>
             )}
           </li>
         </ul>

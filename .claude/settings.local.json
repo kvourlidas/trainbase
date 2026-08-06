@@ -45,7 +45,29 @@
       "Bash(npm run *)",
       "Bash(command -v chromium-cli)",
       "Bash(command -v npx)",
-      "Bash(curl -s \"http://localhost:3000/\")"
+      "Bash(curl -s \"http://localhost:3000/\")",
+      "Bash(npm uninstall *)",
+      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomBytes\\(32\\).toString\\('base64'\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomBytes\\(9\\).toString\\('base64url'\\)\\)\")",
+      "Bash(curl -sf http://localhost:3001)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3001 >/dev/null; do sleep 1; done')",
+      "Bash(curl -sv http://localhost:3001)",
+      "Bash(curl -sv http://localhost:3000)",
+      "Bash(rm -f /tmp/cookies.txt)",
+      "Bash(curl -s -D - -o /dev/null -b /tmp/cookies.txt -c /tmp/cookies.txt http://localhost:3000/account)",
+      "Bash(curl -s -b /tmp/cookies.txt -c /tmp/cookies.txt http://localhost:3000/login -o /tmp/login.html)",
+      "Bash(curl -s -D - -o /tmp/login_result.html -b /tmp/cookies.txt -c /tmp/cookies.txt -X POST http://localhost:3000/login -F '$ACTION_1:0={\"id\":\"601de5614afadb5b53723a42bfab060f25443db8d3\",\"bound\":\"$@1\"}' -F '$ACTION_1:1=[null]' -F '$ACTION_KEY=k8a428d939279469089eb2e678510dbcd' -F email=konstantinosvourlidas@gmail.com -F password=ad3ne17-DZsS -F 1_email=konstantinosvourlidas@gmail.com -F 1_password=ad3ne17-DZsS)",
+      "Bash(grep -o 'name=\"\\\\$ACTION_1:0\" value=\"[^\"]*\"' /tmp/login.html)",
+      "Bash(node \"C:\\\\Users\\\\GEORGE~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-George-V-Desktop--------PROJECTS-trainbase\\\\eda3f995-595a-4d79-838b-569dea4316e6\\\\scratchpad\\\\test-login.mjs\")",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -o /tmp/account.html -w 'status=%{http_code}\\\\n' --cookie session=eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImtvbnN0YW50aW5vc3ZvdXJsaWRhc0BnbWFpbC5jb20iLCJpYXQiOjE3ODYwMzE5NTksImV4cCI6MTc4NjYzNjc1OX0.QoYP7yCE5TDhyu8vLyhOLgre7nfhCXpEY7lVbeQ89uU http://localhost:3000/account)",
+      "Bash(curl -s -D - -o /dev/null --cookie session=eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImtvbnN0YW50aW5vc3ZvdXJsaWRhc0BnbWFpbC5jb20iLCJpYXQiOjE3ODYwMzE5NTksImV4cCI6MTc4NjYzNjc1OX0.QoYP7yCE5TDhyu8vLyhOLgre7nfhCXpEY7lVbeQ89uU http://localhost:3000/login)",
+      "Bash(grep -o '<form class=\"mt-10\"[^>]*>.\\\\{0,400\\\\}' /tmp/account.html)",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImtvbnN0YW50aW5vc3ZvdXJsaWRhc0BnbWFpbC5jb20iLCJpYXQiOjE3ODYwMzE5NTksImV4cCI6MTc4NjYzNjc1OX0.QoYP7yCE5TDhyu8vLyhOLgre7nfhCXpEY7lVbeQ89uU\" *)",
+      "Bash(rm -f /tmp/cookies.txt /tmp/cookies_after_signout.txt /tmp/login.html /tmp/login_result.html /tmp/account.html /tmp/home.html /tmp/signout_result.html /tmp/dev.log)",
+      "Bash(netstat -ano)",
+      "Bash(curl -s -o /tmp/account2.html -w 'status=%{http_code}\\\\n' --cookie session=eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImtvbnN0YW50aW5vc3ZvdXJsaWRhc0BnbWFpbC5jb20iLCJpYXQiOjE3ODYwMzE5NTksImV4cCI6MTc4NjYzNjc1OX0.QoYP7yCE5TDhyu8vLyhOLgre7nfhCXpEY7lVbeQ89uU http://localhost:3000/account)",
+      "Bash(rm -f /tmp/account2.html)"
     ]
   }
 }

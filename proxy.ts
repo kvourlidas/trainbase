@@ -1,8 +1,22 @@
-import { type NextRequest } from "next/server";
-import { updateSession } from "@/lib/supabase/proxy";
+import { NextResponse, type NextRequest } from "next/server";
+import { getSession } from "@/lib/auth/session";
+
+const protectedRoutes = ["/account"];
+const publicOnlyRoutes = ["/login"];
 
 export async function proxy(request: NextRequest) {
-  return await updateSession(request);
+  const { pathname } = request.nextUrl;
+  const session = await getSession();
+
+  if (protectedRoutes.some((route) => pathname.startsWith(route)) && !session) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  if (publicOnlyRoutes.includes(pathname) && session) {
+    return NextResponse.redirect(new URL("/account", request.url));
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {

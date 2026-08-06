@@ -2,16 +2,23 @@
 
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { createClient } from "@/lib/supabase/server";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { timingSafeEqual } from "node:crypto";
+import { createSession } from "@/lib/auth/session";
+import { isAuthConfigured } from "@/lib/auth/config";
 
 export type AuthActionState = { error: string } | null;
+
+function safeEqual(a: string, b: string) {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  return bufA.length === bufB.length && timingSafeEqual(bufA, bufB);
+}
 
 export async function signIn(
   _prevState: AuthActionState,
   formData: FormData
 ): Promise<AuthActionState> {
-  if (!isSupabaseConfigured) {
+  if (!isAuthConfigured) {
     return { error: "Η σύνδεση δεν είναι διαθέσιμη αυτή τη στιγμή." };
   }
 
@@ -22,13 +29,17 @@ export async function signIn(
     return { error: "Συμπλήρωσε email και κωδικό πρόσβασης." };
   }
 
-  const supabase = await createClient();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  const adminEmail = process.env.ADMIN_EMAIL!;
+  const adminPassword = process.env.ADMIN_PASSWORD!;
 
-  if (error) {
+  const emailMatches = safeEqual(email.toLowerCase(), adminEmail.toLowerCase());
+  const passwordMatches = safeEqual(password, adminPassword);
+
+  if (!emailMatches || !passwordMatches) {
     return { error: "Λάθος email ή κωδικός πρόσβασης." };
   }
 
+  await createSession(adminEmail);
   revalidatePath("/", "layout");
   redirect("/account");
 }

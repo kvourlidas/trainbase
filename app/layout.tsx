@@ -5,8 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationJsonLd } from "@/lib/jsonld";
-import { createClient } from "@/lib/supabase/server";
-import { isSupabaseConfigured } from "@/lib/supabase/config";
+import { getSession } from "@/lib/auth/session";
 import { APP_NAME, TAGLINE, SITE_DESCRIPTION, SITE_URL } from "@/config/site";
 
 const geistSans = Geist({
@@ -52,12 +51,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  let userEmail: string | null = null;
-  if (isSupabaseConfigured) {
-    const supabase = await createClient();
-    const { data } = await supabase.auth.getClaims();
-    userEmail = data?.claims.email ?? null;
-  }
+  const session = await getSession();
+  const userEmail = session?.email ?? null;
 
   return (
     <html

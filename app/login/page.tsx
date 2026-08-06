@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { APP_NAME } from "@/config/site";
 import { LoginForm } from "@/components/LoginForm";
 
@@ -32,13 +31,6 @@ export default async function LoginPage({
       <div className="mt-10">
         <LoginForm />
       </div>
-
-      <p className="mt-6 text-sm text-stone-500">
-        Δεν έχεις λογαριασμό;{" "}
-        <Link href="/signup" className="text-orange-600 hover:text-orange-500">
-          Εγγραφή
-        </Link>
-      </p>
     </div>
   );
 }

@@ -379,3 +379,8 @@ export function getProgramBySlug(slug: string): Program | undefined {
 export function getProgramsByCategory(categorySlug: string): Program[] {
   return programs.filter((program) => program.categorySlug === categorySlug);
 }
+
+// Stand-in until purchases are tracked for real — treat everything as owned.
+export function getPurchasedPrograms(): Program[] {
+  return programs;
+}
