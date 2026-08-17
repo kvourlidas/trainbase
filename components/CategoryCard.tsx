@@ -20,7 +20,7 @@ const icons: Record<Category["icon"], React.ReactNode> = {
 export function CategoryCard({ category }: { category: Category }) {
   return (
     <Link
-      href={`/programs?category=${category.slug}`}
+      href={`/programs/${category.slug}`}
       className="group relative isolate flex min-h-[85vh] flex-col overflow-hidden rounded-xl border border-stone-200 p-6 shadow-sm transition-all hover:border-orange-400 hover:shadow-lg sm:min-h-[80vh]"
     >
       <Image
