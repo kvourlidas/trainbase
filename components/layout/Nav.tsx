@@ -8,10 +8,11 @@ import { LangToggle } from "@/components/ui/LangToggle";
 import { Arrow, Button } from "@/components/ui/Button";
 import { useUI } from "./UIProvider";
 
+// Same order as the sections appear on the landing page.
 const links = [
+  { hash: "coach", key: "coach" },
   { hash: "programs", key: "programs" },
   { hash: "how", key: "method" },
-  { hash: "coach", key: "coach" },
   { hash: "adapted", key: "adapted" },
   { hash: "tips", key: "tips" },
 ] as const;

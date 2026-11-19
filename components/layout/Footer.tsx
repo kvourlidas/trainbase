@@ -19,9 +19,10 @@ export async function Footer() {
         </div>
         <div>
           <h2 className="mono">{t("navigate")}</h2>
+          <Link href={{ pathname: "/", hash: "coach" }}>{tn("coach")}</Link>
           <Link href={{ pathname: "/", hash: "programs" }}>{tn("programs")}</Link>
           <Link href={{ pathname: "/", hash: "how" }}>{tn("method")}</Link>
-          <Link href={{ pathname: "/", hash: "coach" }}>{tn("coach")}</Link>
+          <Link href={{ pathname: "/", hash: "adapted" }}>{tn("adapted")}</Link>
           <Link href={{ pathname: "/", hash: "tips" }}>{tn("tips")}</Link>
         </div>
         <div>
