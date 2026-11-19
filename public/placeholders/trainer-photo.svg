@@ -1,6 +1,0 @@
-<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trainer photo coming soon">
-  <rect width="800" height="1000" fill="#1c1917"/>
-  <circle cx="400" cy="380" r="140" fill="#44403c"/>
-  <path d="M180 900 C180 700 620 700 620 900 Z" fill="#44403c"/>
-  <text x="400" y="960" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#d6d3d1" text-anchor="middle">Photo coming soon</text>
-</svg>
