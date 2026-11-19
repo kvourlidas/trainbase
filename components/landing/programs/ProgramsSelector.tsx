@@ -3,6 +3,7 @@
 import { useFormatter, useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  callFeatureKey,
   envs,
   equipmentOptions,
   planDisplayName,
@@ -148,6 +149,7 @@ export function ProgramsSelector({ onStartPlan }: { onStartPlan?: StartPlanHandl
       <div className="plans">
         {plans.map((p) => {
           const amount = p.amount[variant];
+          const calls = p.calls[variant];
           const name = planDisplayName(p, env);
           return (
             <article key={p.id} className={p.highlighted ? "plan hot" : "plan"} aria-label={name}>
@@ -168,6 +170,7 @@ export function ProgramsSelector({ onStartPlan }: { onStartPlan?: StartPlanHandl
               </div>
               <div className="inc">{t(`includes.${p.includes[variant]}` as "includes.program")}</div>
               <ul>
+                {calls && <li>{t(`features.${callFeatureKey(variant)}`, calls)}</li>}
                 {p.features[variant].map((f) => (
                   <li key={f}>{t(`features.${f}` as "features.videos")}</li>
                 ))}
