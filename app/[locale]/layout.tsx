@@ -41,8 +41,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   return (
     <html lang={locale} className={`${interTight.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
-        {/* Scroll reveals only hide content once JS is confirmed to run. */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        {/* Scroll reveals start hidden; without JS, show everything. */}
+        <noscript>
+          <style>{".rv{opacity:1!important;transform:none!important}"}</style>
+        </noscript>
       </head>
       <body>
         <a href="#main" className="skip sr-only-focusable">
