@@ -25,6 +25,7 @@
   --ink: #0d0d0f;
   --bone: #efede7;
   --acc: #ff4f1f;
+  --acc-on-light: #c2380f;
   --ink-2: #18181b;
   --muted-d: #8a8a86;
   --muted-l: #5e5d58;
@@ -77,6 +78,10 @@
   }
   .acc {
     color: var(--acc);
+  }
+  /* WCAG AA: small accent labels on bone use a darker accent (4.9:1). */
+  .sec:not(.dark) .mono.acc {
+    color: var(--acc-on-light);
   }
   .dark {
     background: var(--ink);
