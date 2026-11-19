@@ -1,54 +1,56 @@
-import { APP_NAME, SITE_URL } from "@/config/site";
-import type { Program } from "@/content/programs";
-import type { Trainer } from "@/content/trainer";
+import { siteConfig } from "@/config/site";
+import { plans, planDisplayName, envs } from "@/config/pricing";
+import type { Locale } from "@/i18n/routing";
+import { localeUrl } from "./seo";
 
-export function organizationJsonLd() {
+export function organizationLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: APP_NAME,
-    url: SITE_URL,
-    logo: `${SITE_URL}/logo.svg`,
+    name: siteConfig.name,
+    url: localeUrl(locale),
+    email: siteConfig.contactEmail,
+    sameAs: Object.values(siteConfig.social),
   };
 }
 
-export function personJsonLd(trainer: Trainer) {
+export function coachLd(locale: Locale, description: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: trainer.name,
-    jobTitle: trainer.title,
-    image: `${SITE_URL}${trainer.photo}`,
-    worksFor: {
-      "@type": "Organization",
-      name: APP_NAME,
-    },
+    name: siteConfig.coachName,
+    jobTitle: "Certified Personal Trainer",
+    description,
+    worksFor: { "@type": "Organization", name: siteConfig.name },
+    url: `${localeUrl(locale)}#coach`,
   };
 }
 
-export function courseJsonLd(program: Program) {
+/** One Service with an Offer per plan/variant. Prices are only listed once set. */
+export function servicesLd(locale: Locale) {
+  const offers = envs
+    .filter((e) => e === "gym" || e === "adapted")
+    .flatMap((env) =>
+      plans.map((p) => {
+        const amount = p.amount[env === "adapted" ? "adapted" : "standard"];
+        return {
+          "@type": "Offer",
+          name: planDisplayName(p, env),
+          url: `${localeUrl(locale)}#programs`,
+          ...(amount !== null && {
+            price: amount,
+            priceCurrency: "EUR",
+            priceSpecification: { "@type": "UnitPriceSpecification", price: amount, priceCurrency: "EUR", unitCode: "MON" },
+          }),
+        };
+      }),
+    );
   return {
     "@context": "https://schema.org",
-    "@type": "Course",
-    name: program.title,
-    description: program.description,
-    provider: {
-      "@type": "Organization",
-      name: APP_NAME,
-      sameAs: SITE_URL,
-    },
-  };
-}
-
-export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: `${SITE_URL}${item.url}`,
-    })),
+    "@type": "Service",
+    serviceType: "Personal training",
+    provider: { "@type": "Organization", name: siteConfig.name },
+    areaServed: "GR",
+    offers,
   };
 }

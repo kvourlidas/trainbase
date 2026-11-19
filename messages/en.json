@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "title": "Personal Training — Strength by design",
+    "description": "Personalized programs for the gym, home, outdoors and adapted training — every set logged, progress you can actually see."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "language": "Language",
+    "close": "Close",
+    "home": "Home"
+  },
+  "nav": {
+    "programs": "Programs",
+    "method": "Method",
+    "coach": "The Coach",
+    "adapted": "Adapted",
+    "tips": "Tips",
+    "login": "Log in",
+    "account": "Account",
+    "start": "Start"
+  },
+  "hero": {
+    "meta1": "[ Personal Training ] — Online & In person",
+    "meta2": "Program · Coaching · Progress",
+    "h1a": "STRENGTH",
+    "h1b": "BY DESIGN",
+    "kicker": "Built, not born.",
+    "p": "Personalized programs for the gym, home, outdoors and adapted training — every set logged, progress you can actually see, week after week.",
+    "cta1": "Find your program",
+    "cta2": "How it works",
+    "ringWeek": "WEEK 06 / 12",
+    "ringLabel": "WEEKLY GOAL",
+    "chip1": "SQUAT 1RM",
+    "chip2": "STREAK",
+    "stats": {
+      "environments": "Training environments",
+      "plans": "Coaching plans",
+      "personal": "Personalized program",
+      "access": "Access to your progress"
+    }
+  },
+  "coach": {
+    "idx": "Coach",
+    "title": "THE COACH",
+    "sub": "Your coach, your system.",
+    "photoLabel": "[ Coach photo — 4:5 ]",
+    "photoAlt": "The TRAINBASE coach",
+    "tag": "CERTIFIED PT",
+    "quote": "I don’t hand you a PDF. I give you <em>a system</em> that adapts to you."
+  },
+  "programs": {
+    "idx": "Programs",
+    "title": "WHERE DO YOU TRAIN?",
+    "sub": "Choose your arena.",
+    "envGroupLabel": "Training environment",
+    "envs": {
+      "gym": {
+        "name": "Gym",
+        "desc": "A full program for the gym with machines and free weights."
+      },
+      "home": {
+        "name": "Home Gym",
+        "desc": "Train at home — with whatever equipment you have, or none at all."
+      },
+      "outdoor": {
+        "name": "Outdoor",
+        "desc": "Park, track, beach. The city is your gym."
+      },
+      "adapted": {
+        "name": "Adapted",
+        "desc": "Training adapted to disability or specific movement needs."
+      }
+    },
+    "notes": {
+      "gym": "A program for a fully equipped gym.",
+      "outdoor": "Bodyweight and whatever you find outside."
+    },
+    "equipmentQuestion": "What equipment do you have?",
+    "equipment": {
+      "none": "No equipment",
+      "bands": "Resistance bands",
+      "dumbbells": "Dumbbells",
+      "full": "Full home gym"
+    },
+    "equipmentRequired": "Pick your equipment to continue.",
+    "intake": {
+      "condition": "What is your disability or condition?",
+      "details": "Tell us anything important about your movement and daily activities",
+      "detailsHelp": "E.g. mobility limitations, movements you can/can’t perform, equipment you use, previous training experience.",
+      "placeholder": "Write here...",
+      "name": "Full name",
+      "email": "Email",
+      "firstStepLabel": "YOUR FIRST STEP",
+      "firstStepTitle": "Every Adapted member starts with an online assessment.",
+      "firstStepText": "We discuss your needs and goals so your program is properly adapted to you.",
+      "submit": "Book your first call",
+      "sending": "Sending...",
+      "sent": "We got your details. Pick a time for your first call.",
+      "error": "Something went wrong. Please try again.",
+      "required": "Required field.",
+      "invalidEmail": "Invalid email."
+    },
+    "plansTitle": "Choose your plan",
+    "plansSub": "Monthly subscription · Cancel anytime",
+    "foot1": "* Prices to be set by the coach",
+    "foot2": "Secure payment · Instant access after sign-up",
+    "popular": "Popular",
+    "perMonth": "/ month",
+    "start": "Start {plan}",
+    "intakeFirst": "Fill in the assessment form first.",
+    "includes": {
+      "program": "Personalized training program",
+      "everythingInProgram": "Everything in Program +",
+      "everythingInCoach": "Everything in Coach +",
+      "adaptedProgram": "Program +",
+      "adaptedAssessment": "Program + assessment +"
+    },
+    "features": {
+      "videos": "Exercise videos",
+      "setsReps": "Sets & reps",
+      "progression": "Weekly progression",
+      "tracking": "Track your workouts",
+      "assessmentCall": "Initial assessment call",
+      "oneCall": "1 online coaching call / week",
+      "oneCallAdapted": "1 online call / week",
+      "weeklyCheck": "Weekly progress check",
+      "techniqueFeedback": "Exercise technique feedback",
+      "adjustments": "Program adjustments",
+      "twoCalls": "2 online coaching calls / week",
+      "twoCallsAdapted": "2 online calls / week",
+      "nutritionPlan": "Personalized nutrition plan",
+      "nutritionMonitoring": "Nutrition monitoring",
+      "fullGuidance": "Full weekly guidance"
+    }
+  },
+  "how": {
+    "idx": "Method",
+    "title": "HOW IT WORKS",
+    "sub": "Four steps. Zero guesswork.",
+    "steps": {
+      "s1": {
+        "h": "Pick a program",
+        "p": "Choose where you train and the plan that fits you."
+      },
+      "s2": {
+        "h": "Create an account",
+        "p": "Sign up in 30 seconds. Your program is waiting in your profile."
+      },
+      "s3": {
+        "h": "Train",
+        "p": "Video for every exercise, sets, reps and weights — on your phone."
+      },
+      "s4": {
+        "h": "See your progress",
+        "p": "Charts, records and weekly check-ins. Every rep counts."
+      }
+    }
+  },
+  "progress": {
+    "idx": "Progress",
+    "title": "TRACK EVERY REP.",
+    "sub": "The members area — your progress on one screen.",
+    "p": "Everyone who buys a program gets a personal account. Log every workout and see how you evolve — no paper, no spreadsheets.",
+    "features": {
+      "f1": "Log sets & weights",
+      "f2": "Strength charts",
+      "f3": "Streaks & personal records",
+      "f4": "Technique video per exercise"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "week": "WEEK {current}/{total}",
+    "workouts": "Workouts",
+    "perMonth": "month",
+    "streak": "Streak",
+    "days": "days",
+    "best": "BEST {n}",
+    "weeklyVolume": "Weekly vol.",
+    "volumePerWeek": "Volume / week",
+    "oneRm": "{lift} · 1RM (kg)",
+    "today": "Today · {workout}",
+    "tap": "Tap to complete a set",
+    "setLabel": "Set {n} — {exercise}",
+    "demoName": "Maria K."
+  },
+  "adapted": {
+    "idx": "Adapted",
+    "title": "ADAPTED TRAINING",
+    "sub": "Training for everyone — truly everyone.",
+    "big1": "Adapted training isn't one-size-fits-all.",
+    "big2": "We get to know you first.",
+    "p": "Every Adapted Training member starts with an online assessment. We meet, discuss your needs and goals, and make sure your program is properly adapted to you.",
+    "cta": "Book your first call",
+    "steps": {
+      "s1": {
+        "h": "Tell us about you",
+        "p": "Condition, movement limits, equipment, experience."
+      },
+      "s2": {
+        "h": "Online assessment",
+        "p": "A first call to get to know each other and set goals."
+      },
+      "s3": {
+        "h": "Your own program",
+        "p": "Program, coaching and nutrition depending on your plan."
+      }
+    }
+  },
+  "tips": {
+    "idx": "Journal",
+    "title": "FITNESS TIPS",
+    "sub": "Free advice from the coach.",
+    "read": "Read",
+    "min": "{n} MIN",
+    "all": "All tips",
+    "back": "Back to tips"
+  },
+  "faq": {
+    "idx": "FAQ",
+    "title": "FAQ",
+    "items": {
+      "q1": {
+        "q": "Do I need experience to start?",
+        "a": "No. Every program is built for your level and evolves with you, week after week."
+      },
+      "q2": {
+        "q": "How do I track my progress?",
+        "a": "With your account you log sets, reps and weights, and see charts, records and your streak."
+      },
+      "q3": {
+        "q": "Can I change plans later?",
+        "a": "Yes, you can upgrade or switch plans anytime from your profile."
+      },
+      "q4": {
+        "q": "What does Adapted Training include?",
+        "a": "It always starts with an online assessment. Then you get a program adapted to your movement needs, with coaching depending on your plan."
+      }
+    }
+  },
+  "cta": {
+    "title1": "START",
+    "title2": "TODAY",
+    "p": "The first rep is the hardest. The rest is just progress.",
+    "primary": "Start now",
+    "secondary": "Create account"
+  },
+  "footer": {
+    "newsletter": "Newsletter",
+    "newsletterText": "One tip a week. Nothing else.",
+    "newsletterPlaceholder": "email@example.com",
+    "newsletterSubmit": "Subscribe to the newsletter",
+    "newsletterOk": "Thanks! See you in your inbox.",
+    "newsletterError": "Please try again.",
+    "navigate": "Navigate",
+    "account": "Account",
+    "login": "Log in",
+    "signup": "Sign up",
+    "faq": "FAQ",
+    "social": "Social",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies"
+  },
+  "auth": {
+    "membersArea": "MEMBERS AREA",
+    "sideTitle": "YOUR PROGRESS LIVES HERE",
+    "login": "Log in",
+    "signup": "Sign up",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "submitLogin": "Log in",
+    "submitSignup": "Create account",
+    "dialogLabel": "Log in or sign up",
+    "unavailable": "Accounts are coming soon."
+  },
+  "notFound": {
+    "title": "404",
+    "text": "Page not found.",
+    "back": "Back to home"
+  }
+}

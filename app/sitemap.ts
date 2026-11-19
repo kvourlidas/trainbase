@@ -1,17 +1,17 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/config/site";
-import { programs } from "@/content/programs";
+import { routing } from "@/i18n/routing";
+import { localeUrl } from "@/lib/seo";
+
+// Phase 8 adds /tips, /tips/[slug] and /legal/* once those pages exist.
+const PATHS = ["/"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/programs", "/about", "/contact"].map((path) => ({
-    url: `${SITE_URL}${path}`,
-    lastModified: new Date(),
-  }));
-
-  const programRoutes = programs.map((program) => ({
-    url: `${SITE_URL}/programs/${program.slug}`,
-    lastModified: new Date(),
-  }));
-
-  return [...staticRoutes, ...programRoutes];
+  return PATHS.flatMap((path) =>
+    routing.locales.map((locale) => ({
+      url: localeUrl(locale, path),
+      changeFrequency: "weekly" as const,
+      priority: 1,
+      alternates: { languages: Object.fromEntries(routing.locales.map((l) => [l, localeUrl(l, path)])) },
+    })),
+  );
 }
