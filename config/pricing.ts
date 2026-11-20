@@ -8,8 +8,28 @@
 export const envs = ["gym", "home", "outdoor", "adapted"] as const;
 export type Env = (typeof envs)[number];
 
-export const equipmentOptions = ["none", "bands", "dumbbells", "full"] as const;
+/** Environments that use the training-profile form (Adapted has its own intake). */
+export const profileEnvs = ["gym", "home", "outdoor"] as const;
+export type ProfileEnv = (typeof profileEnvs)[number];
+export const isProfileEnv = (env: Env): env is ProfileEnv => env !== "adapted";
+
+/** Home Gym equipment, in display order. */
+export const equipmentOptions = ["none", "bands", "dumbbells", "kettlebells", "bench", "pullup", "full"] as const;
 export type Equipment = (typeof equipmentOptions)[number];
+/** Options that can only be selected on their own. */
+export const exclusiveEquipment = ["none", "full"] as const satisfies readonly Equipment[];
+export type ExclusiveEquipment = (typeof exclusiveEquipment)[number];
+export type EquipmentItem = Exclude<Equipment, ExclusiveEquipment>;
+export const isExclusiveEquipment = (eq: Equipment): eq is ExclusiveEquipment =>
+  (exclusiveEquipment as readonly Equipment[]).includes(eq);
+
+export const fitnessLevels = ["beginner", "intermediate", "advanced"] as const;
+export type FitnessLevel = (typeof fitnessLevels)[number];
+
+export const goalOptions = ["fatloss", "muscle", "strength", "conditioning", "mobility", "health", "sport"] as const;
+export type Goal = (typeof goalOptions)[number];
+export const MAX_GOALS = 3;
+export const MAX_NOTES = 1000;
 
 export const planIds = ["program", "coach", "premium"] as const;
 export type PlanId = (typeof planIds)[number];

@@ -80,9 +80,47 @@
       "none": "No equipment",
       "bands": "Resistance bands",
       "dumbbells": "Dumbbells",
+      "kettlebells": "Kettlebells",
+      "bench": "Bench",
+      "pullup": "Pull-up bar",
       "full": "Full home gym"
     },
-    "equipmentRequired": "Pick your equipment to continue.",
+    "profile": {
+      "equipmentHint": "Select all that apply",
+      "equipmentHelp": "“No equipment” and “Full home gym” can only be selected on their own.",
+      "levelQuestion": "What’s your current fitness level?",
+      "levels": {
+        "beginner": {
+          "name": "Beginner",
+          "desc": "Just starting, or less than 6 months of training."
+        },
+        "intermediate": {
+          "name": "Intermediate",
+          "desc": "Training consistently for 6 months – 2 years; I know the basic lifts."
+        },
+        "advanced": {
+          "name": "Advanced",
+          "desc": "Training systematically with a program for 2+ years."
+        }
+      },
+      "goalsQuestion": "What do you want to achieve?",
+      "goalsHint": "Up to 3",
+      "goals": {
+        "fatloss": "Fat loss",
+        "muscle": "Build muscle",
+        "strength": "Strength",
+        "conditioning": "Conditioning & endurance",
+        "mobility": "Mobility",
+        "health": "Health & wellbeing",
+        "sport": "Athletic performance"
+      },
+      "notesLabel": "Anything else your coach should know? (optional)",
+      "notesPlaceholder": "E.g. injuries, how many days a week you can train, a specific target (race, wedding…)",
+      "summaryLabel": "Your profile",
+      "incomplete": "Fill in level and goal to continue",
+      "incompleteHome": "Fill in equipment, level and goal to continue",
+      "complete": "Choose a plan ↓"
+    },
     "intake": {
       "condition": "What is your disability or condition?",
       "details": "Tell us anything important about your movement and daily activities",
